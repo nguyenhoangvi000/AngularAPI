@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="myApp">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="#">VND Convert Table</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <form class="form-inline pull-right">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input ng-model="search.$" type="text" placeholder="Search" class="form-control">
+                                <div class="input-group-addon btn btn-info">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table class="table table-hover table-bordered" ng-controller="myControllers">
+                    <thead>
+                        <tr class="bg-primary text-white">
+                            <th class="text-center">
+                                <h2>Flag</h2>
+                            </th>
+                            <th class="text-center">
+                                <h2>Currency</h2>
+                            </th>
+                            <th class="text-center">
+                                <h2>Value</h2>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr data-ng-repeat="x in list|filter:search">
+                            <td data-ng-bind="x.value"></td>
+                            <td data-ng-bind="x.codeto+'=>'+'VND'"></td>
+                            <td data-ng-bind="x.value"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>Bootstrap Template</p>
+        </footer>
+    </div>
+
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery.dataTables.min.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="js/controllers/myControllers.js"></script>
+</body>
+
+</html>
