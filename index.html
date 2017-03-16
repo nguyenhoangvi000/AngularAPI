@@ -53,13 +53,13 @@
                     <thead>
                         <tr class="bg-primary text-white">
                             <th class="text-center">
-                                <h2>Flag</h2>
+                                <h3>Flag</h3>
                             </th>
                             <th class="text-center">
-                                <h2>Currency</h2>
+                                <h3>Currency</h3>
                             </th>
                             <th class="text-center">
-                                <h2>Value</h2>
+                                <h3>Value</h3>
                             </th>
                         </tr>
                     </thead>
@@ -67,7 +67,7 @@
                         <tr data-ng-repeat="x in list|filter:search">
                             <td data-ng-bind="x.value"></td>
                             <td data-ng-bind="x.codeto+'=>'+'VND'"></td>
-                            <td data-ng-bind="x.value"></td>
+                            <td data-ng-bind="x.value+' đ'"></td>
                         </tr>
                     </tbody>
                 </table>
