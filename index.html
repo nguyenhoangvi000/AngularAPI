@@ -53,6 +53,9 @@
                     <thead>
                         <tr class="bg-primary text-white">
                             <th class="text-center">
+                                <h3>Index</h3>
+                            </th>
+                            <th class="text-center">
                                 <h3>Flag</h3>
                             </th>
                             <th class="text-center">
@@ -65,7 +68,9 @@
                     </thead>
                     <tbody class="text-center">
                         <tr data-ng-repeat="x in list|filter:search">
-                            <td data-ng-bind="x.value"></td>
+                            <td data-ng-bind="$index + 1"></td>
+                            <td><img height="42" width="60" src="http://www.geonames.org/flags/x/{{x.codeflag}}.gif" alt="">=>
+                                <img height="42" width="60" src="http://www.geonames.org/flags/x/vn.gif" alt=""></td>
                             <td data-ng-bind="x.codeto+'=>'+'VND'"></td>
                             <td data-ng-bind="x.value+' đ'"></td>
                         </tr>
@@ -88,6 +93,7 @@
     <script src="scripts/angular.js"></script>
     <script src="scripts/app.js"></script>
     <script src="js/controllers/myControllers.js"></script>
+    <script src="js/factory/myFactory.js"></script>
 </body>
 
 </html>
